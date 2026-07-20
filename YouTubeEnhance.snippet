@@ -1,0 +1,22 @@
+# Youtube (Music) Enhance - Quantumult X remote snippet
+# !name=Youtube (Music) Enhance
+# !desc=适用于 Youtube & Youtube Music
+# !captionLang → 字幕翻译语言；blockUpload → 屏蔽上传按钮；blockImmersive → 屏蔽选段按钮；blockShorts → 屏蔽 Shorts 按钮；debug → 启用调试模式
+# !arguments=字幕翻译语言:off,屏蔽上传按钮:true,屏蔽选段按钮:true,屏蔽Shorts按钮:false,启用调试模式:false
+# !arguments-desc=- 屏蔽参数：[true, false] 
+# - 翻译参数：[语言代码, off] 
+# 
+# 1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译
+# 2. 开启调试模式用于输出更多日志
+# !ScriptURL 
+
+hostname = *.googlevideo.com, youtubei.googleapis.com
+
+# response body 修改（对应 Surge 的 http-response）
+^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$ url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?argument={"captionLang":"off","blockUpload":true,"blockImmersive":true,"blockShorts":false,"debug":false}
+
+# initplayback 请求（对应 Surge 的 http-request）
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.* url script-request-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js?argument={"captionLang":"off"}
+
+# log_event 请求（对应 Surge 的 http-request）
+^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event url script-request-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
