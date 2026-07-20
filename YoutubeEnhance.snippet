@@ -13,8 +13,8 @@
 hostname = *.googlevideo.com, youtubei.googleapis.com
 
 # response body 修改（对应 Surge 的 http-response）
-^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?argument={"captionLang":"off","blockUpload":true,"blockImmersive":true,"blockShorts":true,"debug":false}
-#^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
+#^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js?argument={"captionLang":"off","blockUpload":true,"blockImmersive":true,"blockShorts":true,"debug":false}
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) url script-response-body https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
 
 # initplayback 请求（对应 Surge 的 http-request）
 #^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.* url script-request-body https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js?argument={"captionLang":"off"}
