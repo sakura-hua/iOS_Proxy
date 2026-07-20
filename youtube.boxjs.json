@@ -33,7 +33,7 @@
         {
           "id": "blockShorts",
           "name": "屏蔽 Shorts 按钮",
-          "val": true,
+          "val": false,
           "type": "boolean",
           "desc": "开启后屏蔽底部导航栏的 Shorts 短视频按钮。"
         },
@@ -54,7 +54,11 @@
       ],
       "author": "@Maasea",
       "repo": "https://github.com/Maasea/sgmodule",
-      "script": "https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js"
+      "script": "https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png",
+        "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+      ]
     }
   ]
 }
