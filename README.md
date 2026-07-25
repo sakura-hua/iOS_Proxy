@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/users/repository/main/xxx.snippet
 感谢
 [@iab0x00](https://github.com/iab0x00/ProxyRules)
 [@Maasea](https://github.com/Maasea/sgmodule)
-
+[@ddgksf2013](https://github.com/ddgksf2013/ddgksf2013)
 
 ## License
 MIT
